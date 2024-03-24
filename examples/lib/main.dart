@@ -126,7 +126,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const StylishStepper(
-                svgIcon: SStepperIcons.line,
+                svgIcon: SStepperIcons.dot,
                 dotIconColor: SSColor.secondary,
                 verticalLineLeftPadding: 5,
                 verticalLineIconHeight: 500,
