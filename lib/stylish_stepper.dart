@@ -1,119 +1,114 @@
 library stylish_stepper;
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class StylishStepper extends StatelessWidget {
-  const StylishStepper({super.key});
+  const StylishStepper(
+      {super.key,
+      required this.content,
+      required this.header,
+      this.showLastIcon,
+      this.dotIconColor,
+      this.contentContainerColor,
+      this.dotSize,
+      this.gap,
+      this.contentWidth,
+      this.svgIconColor,
+      this.assetIconColor,
+      this.assetIcon,
+      this.verticalLineIconHeight,
+      this.verticalLineTopPadding,
+      this.verticalLineLeftPadding,
+      this.svgIcon});
+
+  final String? svgIcon;
+  final String? assetIcon;
+  final Widget content;
+  final Widget header;
+  final Color? svgIconColor;
+  final Color? assetIconColor;
+  final bool? showLastIcon;
+  final Color? dotIconColor;
+  final double? dotSize;
+  final double? gap;
+  final double? contentWidth;
+  final double? verticalLineIconHeight;
+  final double? verticalLineLeftPadding;
+  final double? verticalLineTopPadding;
+  final Color? contentContainerColor;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      separatorBuilder: (context, index) => const SizedBox(height: 0),
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: 2,
-      shrinkWrap: true,
-      padding: EdgeInsets.zero,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: InkWell(
-            onTap: () {},
-            child: Stack(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 0),
-                          child: Container(
-                            height: 10,
-                            width: 10,
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: SSColor.secondary),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(left: 10),
-                              child: Text(
-                                '',
-                                style: TextStyle(),
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.86,
-                              padding: const EdgeInsets.only(left: 10, top: 10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Stack(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        ' data[' ']',
-                                        maxLines: 3,
-                                        style: TextStyle(),
-                                      ),
-                                      const SizedBox(height: 5),
-                                      Row(
-                                        children: [
-                                          const SizedBox(
-                                            child: Icon(Icons.abc),
-                                          ),
-                                          const SizedBox(width: 5),
-                                          SizedBox(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.75,
-                                            child: const Text(
-                                              '',
-                                              maxLines: 3,
-                                              style: TextStyle(),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Positioned(
-                  top: 0,
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 3.5,
-                    ),
-                    child: SizedBox(child: SvgPicture.asset('assets/')),
+    return InkWell(
+      onTap: () {
+        log('tapped ');
+      },
+      child: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: dotSize ?? 15,
+                    width: dotSize ?? 15,
+                    decoration: BoxDecoration(
+                        color: dotIconColor ?? SSColor.secondary,
+                        shape: BoxShape.circle),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      header,
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.only(
+                            left: 8, right: 8, top: 5, bottom: 5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: contentContainerColor ?? SSColor.secondary,
+                        ),
+                        child: SizedBox(
+                          width: contentWidth ??
+                              MediaQuery.of(context).size.width * 0.84,
+                          child: content,
+                        ),
+                      ),
+                      SizedBox(height: gap ?? 10),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Positioned(
+            top: verticalLineTopPadding ?? 15,
+            left: 0,
+            child: Padding(
+              padding: EdgeInsets.only(left: verticalLineLeftPadding ?? 5.5),
+              child: svgIcon != null
+                  ? SizedBox(
+                      child: SvgPicture.asset(
+                      svgIcon!,
+                      height: verticalLineIconHeight ?? 200,
+                      color: svgIconColor,
+                    ))
+                  : Image.asset(
+                      assetIcon != null ? assetIcon! : SStepperImages.dot,
+                      color: assetIconColor,
+                    ),
             ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
@@ -121,4 +116,14 @@ class StylishStepper extends StatelessWidget {
 class SSColor {
   static const Color secondary = Color(0xFFB8282E);
   static const Color primaryColor = Color(0xFF01B9F1);
+}
+
+class SStepperIcons {
+  static const dot = 'assets/dotted_vertical.svg';
+  static const line = 'assets/strike.svg';
+}
+
+class SStepperImages {
+  static const dot = 'assets/images/dot.png';
+  static const line = 'assets/images/new.jpg';
 }

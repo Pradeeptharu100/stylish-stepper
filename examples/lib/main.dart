@@ -30,11 +30,79 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Stylish Stepper'),
       ),
-      body: const Column(
-        children: [
-          StylishStepper(),
-        ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              ListView.builder(
+                itemCount: dataList.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) => StylishStepper(
+                  contentContainerColor: SSColor.secondary,
+                  showLastIcon: true,
+                  header: Text(dataList[index]['name']),
+                  verticalLineTopPadding: 15,
+                  verticalLineLeftPadding: 5.5,
+                  verticalLineIconHeight: 200,
+                  content: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        dataList[index]['name'],
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        dataList[index]['profession'],
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        '${dataList[index]['age']}',
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  dotIconColor: SSColor.secondary,
+                ),
+              ),
+              const StylishStepper(
+                svgIcon: SStepperIcons.dot,
+                gap: 0,
+                content: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+                header: Text('How Are You'),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+List<Map<String, dynamic>> dataList = [
+  {"id": 1, "name": "John", "age": 30, "profession": "Software Engineer"},
+  {"id": 2, "name": "Alice", "age": 25, "profession": "Doctor"},
+  {"id": 3, "name": "Bob", "age": 35, "profession": "Teacher"},
+  {"id": 4, "name": "Emily", "age": 28, "profession": "Graphic Designer"},
+  {"id": 5, "name": "Michael", "age": 40, "profession": "Marketing Manager"},
+];
