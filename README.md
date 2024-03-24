@@ -18,15 +18,10 @@ For help on adding dependencies, refer to Managing dependencies.
 Run flutter pub get to install the package.
 
 Import the package into your code:
-
-dart
-Copy code
 import 'package:stylish_stepper/stylish_stepper.dart';
 Start using the Stylish Stepper widget in your Flutter app.
 
-
-Usage
-dart
+Usage:
 
 import 'package:flutter/material.dart';
 import 'package:stylish_stepper/stylish_stepper.dart';
