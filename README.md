@@ -1,8 +1,6 @@
 # Stylish Stepper
 
 Stylish Stepper is a Flutter package that provides a customizable stepper widget for your Flutter applications. It allows you to create visually appealing step-by-step progress indicators with ease.
-## Features
-List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
@@ -53,7 +51,7 @@ Usage
                 header: Text('How Are You'),
               ),
 
-```Example code :
+Example code :
 
     import 'package:flutter/material.dart';
 import 'package:stylish_stepper/stylish_stepper.dart';
@@ -78,7 +76,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-```Change vertical icons:
+``` Change vertical icons:
 
 StylishStepper(
 svgIcon: SStepperIcons.line,),
