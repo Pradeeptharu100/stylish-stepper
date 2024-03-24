@@ -23,7 +23,7 @@ Start using the Stylish Stepper widget in your Flutter app.
 
 Usage 
 
-Examples 1 :
+```Examples 1 :
   const StylishStepper(
                 dotIconColor: Colors.green,
                 verticalLineLeftPadding: 5,
@@ -53,7 +53,7 @@ Examples 1 :
                 header: Text('How Are You'),
               ),
 
-Example code :
+```Example code :
 
     import 'package:flutter/material.dart';
 import 'package:stylish_stepper/stylish_stepper.dart';
@@ -78,7 +78,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Change vertical icons:
+```Change vertical icons:
 
 StylishStepper(
 svgIcon: SStepperIcons.line,),
@@ -87,7 +87,30 @@ StylishStepper(
 svgIcon: SStepperIcons.dot,),
 
 
-// Full app 
+
+```Full app 
+import 'package:flutter/material.dart';
+import 'package:stylish_stepper/stylish_stepper.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Stylish Stepper',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -194,7 +217,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const StylishStepper(
-                svgIcon: SStepperIcons.line,
+                svgIcon: SStepperIcons.dot,
                 dotIconColor: SSColor.secondary,
                 verticalLineLeftPadding: 5,
                 verticalLineIconHeight: 500,
@@ -244,6 +267,7 @@ Output:
 ![Screenshot_1711263724](https://github.com/Pradeeptharu100/stylish-stepper/assets/140933324/fa8d1461-6235-4ea4-90f1-c4e1092e8351)
 ![Screenshot_1711263750](https://github.com/Pradeeptharu100/stylish-stepper/assets/140933324/a16d63c6-9382-4a8d-af35-6af1f6879ca4)
 ![Screenshot_1711263778](https://github.com/Pradeeptharu100/stylish-stepper/assets/140933324/17f8d0fc-d1ab-4af3-bea7-560260431495)
+
 
 
 
