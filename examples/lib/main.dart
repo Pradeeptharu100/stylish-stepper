@@ -65,8 +65,71 @@ class HomePage extends StatelessWidget {
                   dotIconColor: SSColor.secondary,
                 ),
               ),
+              const SizedBox(height: 20),
               const StylishStepper(
-                svgIcon: SStepperIcons.dot,
+                dotIconColor: Colors.amber,
+                verticalLineLeftPadding: 2,
+                verticalLineIconHeight: 100,
+                assetIcon: 'assets/images/line2.png',
+                gap: 0,
+                content: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+                header: Text('How Are You'),
+              ),
+              const SizedBox(height: 20),
+              const StylishStepper(
+                dotIconColor: Colors.green,
+                verticalLineLeftPadding: 5,
+                verticalLineIconHeight: 150,
+                gap: 0,
+                content: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      'My Name is Pradeep Tharu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+                header: Text('How Are You'),
+              ),
+              const SizedBox(height: 20),
+              const StylishStepper(
+                svgIcon: SStepperIcons.line,
+                dotIconColor: SSColor.secondary,
+                verticalLineLeftPadding: 5,
+                verticalLineIconHeight: 500,
                 gap: 0,
                 content: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

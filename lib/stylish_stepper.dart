@@ -104,6 +104,7 @@ class StylishStepper extends StatelessWidget {
                   : Image.asset(
                       assetIcon != null ? assetIcon! : SStepperImages.dot,
                       color: assetIconColor,
+                      height: verticalLineIconHeight ?? 100,
                     ),
             ),
           ),
@@ -126,4 +127,5 @@ class SStepperIcons {
 class SStepperImages {
   static const dot = 'assets/images/dot.png';
   static const line = 'assets/images/new.jpg';
+  static const tir = 'assets/images/tir.png';
 }
