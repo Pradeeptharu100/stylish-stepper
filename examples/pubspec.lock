@@ -211,9 +211,10 @@ packages:
   stylish_stepper:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      name: stylish_stepper
+      sha256: "70bb2097accad526cda3e8ec693f673be5b1dde32e6e0392c470ab2884c7a991"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   term_glyph:
     dependency: transitive

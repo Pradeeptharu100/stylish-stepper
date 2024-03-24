@@ -1,39 +1,52 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Stylish Stepper
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
+Stylish Stepper is a Flutter package that provides a customizable stepper widget for your Flutter applications. It allows you to create visually appealing step-by-step progress indicators with ease.
 ## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, follow the steps below:
 
-## Usage
+1. Add the following dependency to your `pubspec.yaml` file:
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+   ```yaml
+   dependencies:
+     stylish_stepper: ^1.0.0
+For help on adding dependencies, refer to Managing dependencies.
 
-```dart
-const like = 'sample';
-```
+Run flutter pub get to install the package.
 
-## Additional information
+Import the package into your code:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+dart
+Copy code
+import 'package:stylish_stepper/stylish_stepper.dart';
+Start using the Stylish Stepper widget in your Flutter app.
+
+
+Usage
+dart
+
+import 'package:flutter/material.dart';
+import 'package:stylish_stepper/stylish_stepper.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Stylish Stepper Example'),
+        ),
+        body: StylishStepper(
+          // Customize your Stylish Stepper here
+        ),
+      ),
+    );
+  }
+}

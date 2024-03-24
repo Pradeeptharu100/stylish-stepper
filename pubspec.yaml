@@ -1,7 +1,8 @@
 name: stylish_stepper
-description: "A new Flutter package project."
+description: "To be able to make easy to do open stepper"
 version: 0.0.1
-homepage:
+author: "Pradeep Tharu (pradeeptharu100@gmail.com)"
+homepage: https://github.com/Pradeeptharu100/stylish-stepper
 
 environment:
   sdk: '>=3.2.6 <4.0.0'
